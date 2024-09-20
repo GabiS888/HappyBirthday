@@ -14,11 +14,11 @@
         .hint {
             margin-bottom: 20px;
         }
-        .blur {
-            filter: blur(10px);
-            transition: filter 0.5s;
-            display: block; /* Ensure images are block elements */
-            margin: 0 auto; /* Center images */
+        iframe {
+    width: 100%; /* Make iframe responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 20px auto;
         }
         .blur.show {
             filter: none;
