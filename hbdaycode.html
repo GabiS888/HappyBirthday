@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Puzzle</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .hint {
+            margin-bottom: 20px;
+        }
+        .blur {
+            filter: blur(10px);
+            transition: filter 0.5s;
+        }
+        .blur.show {
+            filter: none;
+        }
+        .hidden-content {
+            display: none;
+        }
+        .cipher {
+            background-color: #333;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .cipher table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cipher th, .cipher td {
+            border: 1px solid white;
+            padding: 5px;
+            text-align: center;
+        }
+        iframe {
+            width: 560px;
+            height: 315px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        function checkPassword(hintNumber, passwordInput) {
+            const correctPasswords = {
+                1: "gym",
+                2: "luleå",
+                3: "råslätt",
+                4: "ikea",
+                5: "futsal",
+                6: "sutton"
+            };
+            const userPassword = document.getElementById(passwordInput).value.toLowerCase();
+            if (userPassword === correctPasswords[hintNumber]) {
+                document.getElementById(`image${hintNumber}`).classList.add('show');
+                document.getElementById(`content${hintNumber}`).style.display = 'block';
+            } else {
+                alert("Incorrect password. Try again!");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Happy Birthday, Special Ed Sheeran</h1>
+    <p>So, I decided to give you a birthday gift! However, since I am broke, I went the creative way.</p>
+    <p>As you can see, you have a made-up code and a bunch of hidden pictures, protected by passwords. You can either guess the password based on the hint, or you can decipher it using the code I left you.</p>
+    <p>Maybe you should use a notepad or a piece of paper for decoding.</p>
+    <p>Once you get the correct password, you will be able to see the pictures, which are messages from your friends, and at the end, the video made with the help of everyone.</p>
+    <p>Happy Birthday, Special Ed Sheeran.</p>
+    <p>Tsk, you might also want to look for some easter eggs that I put in the texts. Read the lines.</p>
+
+    <div class="cipher">
+        <h2>The Cipher:</h2>
+        <table>
+            <tr>
+                <th>Letter</th><th>Code</th><th>Letter</th><th>Code</th><th>Letter</th><th>Code</th>
+            </tr>
+            <tr>
+                <td>Å</td><td>Q21</td><td>A</td><td>R12</td><td>M</td><td>H12</td>
+            </tr>
+            <tr>
+                <td>Ö</td><td>W12</td><td>B</td><td>T21</td><td>N</td><td>J21</td>
+            </tr>
+            <tr>
+                <td>Ä</td><td>E21</td><td>C</td><td>Y12</td><td>O</td><td>K12</td>
+            </tr>
+            <tr>
+                <td>D</td><td>U21</td><td>E</td><td>I12</td><td>P</td><td>L21</td>
+            </tr>
+            <tr>
+                <td>F</td><td>O21</td><td>G</td><td>P12</td><td>Q</td><td>Z12</td>
+            </tr>
+            <tr>
+                <td>H</td><td>A21</td><td>I</td><td>S12</td><td>R</td><td>X21</td>
+            </tr>
+            <tr>
+                <td>J</td><td>D21</td><td>K</td><td>F12</td><td>S</td><td>C12</td>
+            </tr>
+            <tr>
+                <td>L</td><td>G21</td><td>T</td><td>V21</td><td>U</td><td>B12</td>
+            </tr>
+            <tr>
+                <td>V</td><td>N21</td><td>W</td><td>M12</td><td>Z</td><td>Ä21</td>
+            </tr>
+            <tr>
+                <td>X</td><td>Å21</td><td>Y</td><td>Ö12</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Hints</h2>
+
+    <div class="hint">
+        <p><strong>Hint 1:</strong> Where do we go to work out? (Lennart)</p>
+        <p>P12Ö12H12</p>
+        <input type="text" id="password1" placeholder="Enter password">
+        <button onclick="checkPassword(1, 'password1')">Submit</button>
+        <div id="content1" class="hidden-content">
+            <img id="image1" class="blur" src="https://i.postimg.cc/PrTWqCpk/camera.png" alt="Hidden Image 1" width="300">
+        </div>
+    </div>
+
+    <div class="hint">
+        <p><strong>Hint 2:</strong> A city far up in the north, with green rainbows in the sky. You and I wanted to move there after University. (Gabi)</p>
+        <p>G21B12G21I12Q21</p>
+        <input type="text" id="password2" placeholder="Enter password">
+        <button onclick="checkPassword(2, 'password2')">Submit</button>
+        <div id="content2" class="hidden-content">
+            <img id="image2" class="blur" src="https://i.postimg.cc/PrTWqCpk/camera.png" alt="Hidden Image 2" width="300">
+        </div>
+    </div>
+
+    <div class="hint">
+        <p><strong>Hint 3:</strong> Not a good part of town, but we have managed to make it great. (Anxhelo)</p>
+        <p>X21Q21C12G21E21V21V21</p>
+        <input type="text" id="password3" placeholder="Enter password">
+        <button onclick="checkPassword(3, 'password3')">Submit</button>
+        <div id="content3" class="hidden-content">
+            <img id="image3" class="blur" src="https://i.postimg.cc/PrTWqCpk/camera.png" alt="Hidden Image 3" width="300">
+        </div>
+    </div>
+
+    <div class="hint">
+        <p><strong>Hint 4:</strong> Kan vi gå ut och äta lunch igen? det var kul att umgås med dig. (Tobbe)</p>
+        <p>S12F12I12R12</p>
+        <input type="text" id="password4" placeholder="Enter password">
+        <button onclick="checkPassword(4, 'password4')">Submit</button>
+        <div id="content4" class="hidden-content">
+            <img id="image4" class="blur" src="https://i.postimg.cc/PrTWqCpk/camera.png" alt="Hidden Image 4" width="300">
+        </div>
+    </div>
+
+    <div class="hint">
+        <p><strong>Hint 5:</strong> Efter att ha försökt ett år så har jag äntligen lyckats övertala dig att spela, hoppas inte du tänker sluta. (Filip)</p>
+        <p>O21B12V21C12R12G21</p>
+        <input type="text" id="password5" placeholder="Enter password">
+        <button onclick="checkPassword(5, 'password5')">Submit</button>
+        <div id="content5" class="hidden-content">
+            <img id="image5" class="blur" src="https://i.postimg.cc/PrTWqCpk/camera.png" alt="Hidden Image 5" width="300">
+        </div>
+    </div>
+
+    <div class="hint">
+    <h2>Hint 6: Remember where you came from. Now you’re here. (Video)</h2>
+    <p>C12B12V21V21K12J21</p>
+    <input type="text" id="password6">
+    <button onclick="checkPassword(6, 'password6')">Submit</button>
+    <div class="blur" id="image6">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fuGu-Ponjf8?si=P3NdPPoULqBFd6Pe&amp;controls=0" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="hidden-content" id="content6">
+        <p>Hidden Video</p>
+    </div>
+</div>
