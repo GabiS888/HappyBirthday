@@ -12,6 +12,7 @@
         }
         .hint {
             margin-bottom: 20px;
+            text-align: center; /* Center the hint content */
         }
         .blur {
             filter: blur(10px);
@@ -38,7 +39,7 @@
             text-align: center;
         }
         iframe {
-            width: 560px;
+            width: 100%;
             height: 315px;
             display: block;
             margin: 20px auto;
@@ -116,7 +117,7 @@
     <h2>Hints</h2>
 
     <div class="hint">
-        <p><strong>Hint 1:</strong> Where do we go to work out? (Lennart)</p>
+        <h2>Hint 1: Where do we go to work out? (Lennart)</h2>
         <p>P12Ö12H12</p>
         <input type="text" id="password1" placeholder="Enter password">
         <button onclick="checkPassword(1, 'password1')">Submit</button>
@@ -126,7 +127,7 @@
     </div>
 
     <div class="hint">
-        <p><strong>Hint 2:</strong> A city far up in the north, with green rainbows in the sky. You and I wanted to move there after University. (Gabi)</p>
+        <h2>Hint 2: A city far up in the north, with green rainbows in the sky. You and I wanted to move there after University. (Gabi)</h2>
         <p>G21B12G21I12Q21</p>
         <input type="text" id="password2" placeholder="Enter password">
         <button onclick="checkPassword(2, 'password2')">Submit</button>
@@ -136,7 +137,7 @@
     </div>
 
     <div class="hint">
-        <p><strong>Hint 3:</strong> Not a good part of town, but we have managed to make it great. (Anxhelo)</p>
+        <h2>Hint 3: Not a good part of town, but we have managed to make it great. (Anxhelo)</h2>
         <p>X21Q21C12G21E21V21V21</p>
         <input type="text" id="password3" placeholder="Enter password">
         <button onclick="checkPassword(3, 'password3')">Submit</button>
@@ -146,7 +147,7 @@
     </div>
 
     <div class="hint">
-        <p><strong>Hint 4:</strong> Kan vi gå ut och äta lunch igen? det var kul att umgås med dig. (Tobbe)</p>
+        <h2>Hint 4: Kan vi gå ut och äta lunch igen? det var kul att umgås med dig. (Tobbe)</h2>
         <p>S12F12I12R12</p>
         <input type="text" id="password4" placeholder="Enter password">
         <button onclick="checkPassword(4, 'password4')">Submit</button>
@@ -156,7 +157,7 @@
     </div>
 
     <div class="hint">
-        <p><strong>Hint 5:</strong> Efter att ha försökt ett år så har jag äntligen lyckats övertala dig att spela, hoppas inte du tänker sluta. (Filip)</p>
+        <h2>Hint 5: Efter att ha försökt ett år så har jag äntligen lyckats övertala dig att spela, hoppas inte du tänker sluta. (Filip)</h2>
         <p>O21B12V21C12R12G21</p>
         <input type="text" id="password5" placeholder="Enter password">
         <button onclick="checkPassword(5, 'password5')">Submit</button>
@@ -165,36 +166,23 @@
         </div>
     </div>
 
-<div class="hint">
-    <h2>Hint 6: Remember where you came from. Now you’re here. (Video)</h2>
-    <p>C12B12V21V21K12J21</p>
-    <input type="text" id="password6" placeholder="Enter password">
-    <button onclick="checkPassword(6, 'password6')">Submit</button>
-    <div id="image6" style="display: none;">
-        <div style="padding: 56.25% 0 0 0; position: relative;">
-            <iframe src="https://player.vimeo.com/video/1011190137?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                    title="0920"></iframe>
+    <div class="hint">
+        <h2>Hint 6: Remember where you came from. Now you’re here. (Video)</h2>
+        <p>C12B12V21V21K12J21</p>
+        <input type="text" id="password6" placeholder="Enter password">
+        <button onclick="checkPassword(6, 'password6')">Submit</button>
+        <div id="content6" class="hidden-content">
+            <div id="image6" style="display: none;">
+                <div style="padding: 56.25% 0 0 0; position: relative;">
+                    <iframe src="https://player.vimeo.com/video/1011190137?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                            style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+                            title="0920"></iframe>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="hidden-content" id="content6">
-        <p>Hidden Video</p>
-    </div>
-</div>
 
-<script>
-function checkPassword(hintNumber, passwordInput) {
-    const correctPasswords = {
-        6: "sutton" // Ensure this matches the password for hint 6
-    };
-    const userPassword = document.getElementById(passwordInput).value.toLowerCase();
-    if (userPassword === correctPasswords[hintNumber]) {
-        document.getElementById(`image${hintNumber}`).style.display = 'block'; // Show the video
-        document.getElementById(`content${hintNumber}`).style.display = 'block';
-    } else {
-        alert("Incorrect password. Try again!");
-    }
-}
-</script>
+</body>
+</html>
